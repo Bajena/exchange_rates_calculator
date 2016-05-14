@@ -8,10 +8,11 @@ class ExchangeRate
 
       yield file
 
-      File.unlink(file)
     rescue RestClient::Exception => e
       Rails.logger.error "Fetching rates file failed: #{e}"
       raise FileDownloadError
+    ensure
+      File.unlink(file)
     end
 
     private
