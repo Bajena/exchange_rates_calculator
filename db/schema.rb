@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(version: 20160514192307) do
 
   create_table "exchange_rates", force: :cascade do |t|
-    t.date    "date"
-    t.decimal "eur_value"
+    t.date     "date"
+    t.decimal  "eur_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
