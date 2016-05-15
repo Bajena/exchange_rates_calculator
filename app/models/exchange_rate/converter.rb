@@ -33,7 +33,8 @@ class ExchangeRate
     end
 
     def validate_date
-      Date.parse(date_string)
+      date = Date.parse(date_string)
+      raise InvalidDate.new("date_string cannot be in the future") if date > Date.today
     rescue ArgumentError, TypeError
       raise InvalidDate.new("date_string is invalid")
     end

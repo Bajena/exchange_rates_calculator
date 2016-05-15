@@ -36,6 +36,12 @@ describe ExchangeRate::Importer do
       it "substitutes the old records with new ones" do
         expect { subject.import }.to change { ExchangeRate.count }.by(4 - existing_rates.length)
       end
+
+      it "does not import rows with invalid values" do
+        subject.import
+
+        expect(ExchangeRate.where(date: '2016-04-30').count).to eq(0)
+      end
     end
   end
 end
