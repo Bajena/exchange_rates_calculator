@@ -20,7 +20,7 @@ class ExchangeRate
     def convert
       return unless exchange_rate
 
-      (amount / exchange_rate).round(2)
+      (amount / exchange_rate).round(2).to_f
     end
 
     private
