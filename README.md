@@ -1,5 +1,6 @@
 # README
 
+* install ruby 2.2.2
 * run ```bundle``` to download dependencies
 * run ```rake exchange_rates:import``` to import current exchange rate values
 * run ```rails c```
